@@ -76,7 +76,7 @@ class DestMapping():
 
     def match(self, src, dst_pattern):
         """If source string src matches dst, return the matchobject"""
-        reg_pattern = r'\A' + dst_pattern.replace('*', '(.*)') + r'\Z'
+        reg_pattern = r'\A' + dst_pattern.replace('.', '\.').replace('*', '(.*)') + r'\Z'
         m = re.match(reg_pattern, src)
         return m
 
